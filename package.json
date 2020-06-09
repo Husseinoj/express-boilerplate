@@ -6,7 +6,7 @@
   "author": "Hussein Ojaghi <h.ojaghi@roundtableapps.com>",
   "license": "MIT",
   "scripts": {
-    "build": "babel ./src -d build",
+    "build": "babel ./app -d build",
     "dev":"rimraf build && yarn build && nodemon build",
     "debug":"rimraf build && yarn build && node --inspect build"
   },
