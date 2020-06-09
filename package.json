@@ -4,5 +4,21 @@
   "main": "index.js",
   "repository": "https://gitlab.com/Hussein39/express-boilerplate.git",
   "author": "Hussein Ojaghi <h.ojaghi@roundtableapps.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "babel ./src -d build",
+    "dev":"rimraf build && yarn build && nodemon build",
+    "debug":"rimraf build && yarn build && node --inspect build"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2"
+  }
 }
