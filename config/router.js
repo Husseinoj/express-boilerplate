@@ -1,20 +1,21 @@
 import express from 'express';
 
 // import controllers
-import auth from '../app/controllers/auth.controller';
+import {signIn, signUp} from '../app/controllers/profile.controller';
+// import user from '../app/controllers/profile.controller';
 
-const router =express.Router();
+const router= express.Router();
 
 // Auths
-router.post('/auth/signup',auth.signup())
-router.post('/auth/singin',auth.signin())
+router.post('/auth/signup', signUp())
+router.post('/auth/singin', signIn())
 
 // Users
-router.get('/user',auth.index())
-router.get('/user/:id',auth.show())
-router.put('/user/:id',auth.update())
-router.delete('/user/:id',auth.delete())
-router.post('/user',auth.create())
+// router.get('/users',user.index())
+// router.get('/user/:id',user.show())
+// router.put('/user/:id',user.update())
+// router.delete('/user/:id',user.delete())
+// router.post('/user',user.create())
 
 
 export default router;
