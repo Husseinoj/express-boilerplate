@@ -7,10 +7,11 @@
   "license": "MIT",
   "scripts": {
     "build": "babel ./app -d build",
-    "dev":"rimraf build && yarn build && nodemon build",
-    "debug":"rimraf build && yarn build && node --inspect build"
+    "dev": "rimraf build && yarn build && nodemon build",
+    "debug": "rimraf build && yarn build && node --inspect build"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1"
   },
   "devDependencies": {
