@@ -1,0 +1,8 @@
+{
+  "name": "express-boilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitlab.com/Hussein39/express-boilerplate.git",
+  "author": "Hussein Ojaghi <h.ojaghi@roundtableapps.com>",
+  "license": "MIT"
+}
