@@ -9,58 +9,37 @@ const privateKey = 'privateKey';
 // /auth/signup
 export async function signUp(req, res) {
     try {
-        const { user_name, 
-                password, 
-                first_name, 
-                last_name, 
-                age, 
-                email } = req.body;
-        const profile = await Profile.findOne({user_name});
+        const userInfo = req.body;
+
+        const profile = await Profile.findOne({ user_name: userInfo.user_name });
 
         if(profile) 
             return res.status(400).json({
                 message: "User Already Exists"
             });
         
-        const newProfile = new Profile({
-            user_name, 
-            password, 
-            first_name, 
-            last_name, 
-            age, 
-            email  
-        });
-
-        const salt = await bcrypt.genSalt(10);
-        newProfile.password = await bcrypt.hash(password, salt);
+        const newProfile = new Profile(userInfo);
 
         await newProfile.save();
-        
-        const payload = {
-            user:{
-                id: newProfile.id
-            }
-        }
-       
-        jwt.sign(payload, privateKey, (err, token) => {
-            if(err) 
-                return res.status(500).json({
-                    message: err.message
-                })
-            
-            res.status(200).json({
-                token
-            });
-        })
+        const token = await newProfile.generateToken();
 
-    } catch(e) {
+        res.status(200).json({token})
+    } catch(error) {
         res.status(500).json({
-            message: e.message
+            message: error.message
         })
     }
 }
 
 // /auth/signin
 export async function signIn(req, res) {
+    try {
+        const userInfo = req.body;
 
+    } catch(error) {
+        //TODO: create error handler method
+        res.status(500).json({
+            message: error.message
+        }) 
+    }
 }
