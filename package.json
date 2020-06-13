@@ -7,9 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "babel ./app -d build",
-    "dev": "rimraf build && yarn build && nodemon  build",
-    "start:dev": "rimraf build && yarn build && nodemon --exec babel-node -- ./build",
-    "debug": "rimraf build && yarn build && node --inspect build",
+    "dev": "rimraf build && yarn build && nodemon --exec babel-node -- ./build",
     "start": "babel-node ./build"
   },
   "dependencies": {
@@ -27,6 +25,7 @@
     "@babel/plugin-transform-runtime": "^7.10.1",
     "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.2",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2"
   }

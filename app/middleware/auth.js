@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const privateKey= 'privateKey';
+const privateKey=  process.env.PRIVATE_KEY;
 
 export default async (req, res, next) => {
         try {

@@ -53,7 +53,7 @@ export async function show(req, res) {
         const user = await Profile.findById(req.user.id);
         
         if(!user) {
-            res.status(401).json({
+            return res.status(401).json({
                 message: "Invalid user"
             })
         }

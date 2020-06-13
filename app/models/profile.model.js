@@ -4,8 +4,7 @@ import jwt from 'jsonwebtoken';
 import mongoose from '../../config/database';
 import profileSchema from '../../db/db.schema';
 
- // TODO: use env for private 
- const privateKey = 'privateKey';
+const privateKey = process.env.PRIVATE_KEY;
 
 const schema = mongoose.Schema(profileSchema);
 

@@ -1,9 +1,8 @@
 import mongoose from 'mongoose';
 
-// TODO: use env to handle all env in all project
-const databaseUrl= '127.0.0.1'
-const databasePort= '27017';
-const databaseName = 'mydb';
+const databaseUrl= process.env.DATABASE_URL
+const databasePort= process.env.DATABASE_PORT;
+const databaseName = process.env.DATABASE_NAME;
 
 mongoose.connect(`mongodb://${databaseUrl}:${databasePort}/${databaseName}`)
 
