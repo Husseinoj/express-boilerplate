@@ -1,9 +1,12 @@
-import "@babel/polyfill"
+import "@babel/polyfill";
+import 'module-alias/register';
+
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+ 
 
-import router from '../config/router';
+import router from '@root/config/router';
 
 const app = express();
 const port = process.env.SERVER_PORT;

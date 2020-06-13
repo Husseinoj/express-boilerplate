@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-import Profile from '../models/profile.model';
+import Profile from '@app/models/profile.model';
 
 
 // /auth/signup

@@ -1,12 +1,12 @@
 import express from 'express';
 
 // middleware 
-import auth from '../app/middleware/auth'
+import auth from '@app/middleware/auth'
 // import controllers
 import {
         show, 
         signIn, 
-        signUp } from '../app/controllers/profile.controller';
+        signUp } from '@app/controllers/profile.controller';
 
 const router= express.Router();
 

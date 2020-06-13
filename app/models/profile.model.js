@@ -1,8 +1,8 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-import mongoose from '../../config/database';
-import profileSchema from '../../db/db.schema';
+import mongoose from '@root/config/database';
+import profileSchema from '@root/db/db.schema';
 
 const privateKey = process.env.PRIVATE_KEY;
 
