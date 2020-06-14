@@ -8,7 +8,9 @@ import {
         signIn, 
         signUp } from '@app/controllers/profile.controller';
 
-const router= express.Router();
+import resource from '@root/utils/helpers';
+
+let router = express.Router();
 
 /* 
  * Profile Entity
@@ -18,5 +20,9 @@ const router= express.Router();
     router.post('/auth/signin', signIn);
     // authorized
     router.get('/me', auth, show);
+/* 
+ * Admin Entity
+ */
+    resource('admin', router, { auth: { func: auth, methods:['index', 'show'] } });
 
 export default router;

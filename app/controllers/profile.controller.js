@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
 import Profile from '@app/models/profile.model';
-
+import resource from '@root/utils/helpers'
 
 // /auth/signup
 export async function signUp(req, res) {
@@ -51,7 +51,7 @@ export async function signIn(req, res) {
 export async function show(req, res) {
     try {
         const user = await Profile.findById(req.user.id);
-        
+          
         if(!user) {
             return res.status(401).json({
                 message: "Invalid user"
